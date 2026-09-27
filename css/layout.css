@@ -1,0 +1,48 @@
+/* Diseño espacial: una rejilla de dos columnas (índice | lectura) que se apila en pantallas estrechas.
+   Gestalt: PROXIMIDAD (cabecera e índice juntos, a la izquierda; lectura aislada a la derecha con
+   mucho aire) y REGIÓN COMÚN (cada zona tiene su propia columna). */
+.app {
+  display: grid;
+  gap: var(--espacio-6) var(--espacio-7);
+  max-inline-size: 80rem;
+  margin-inline: auto;
+  padding: var(--espacio-6) var(--espacio-5);
+
+  @media (width >= 56rem) {
+    grid-template-columns: minmax(15rem, 20rem) minmax(0, 1fr);
+    align-items: start;
+    padding-block: var(--espacio-7);
+  }
+}
+
+.cabecera {
+  display: grid;
+  gap: var(--espacio-4);
+  align-content: start;
+
+  @media (width >= 56rem) {
+    position: sticky;
+    inset-block-start: var(--espacio-6);
+  }
+}
+
+.cabecera__titulo {
+  font-family: var(--fuente-lectura);
+  font-size: var(--paso-4);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.cabecera__lema {
+  max-inline-size: 30ch;
+  color: var(--color-texto-suave);
+}
+
+/* Columna de lectura: una sola pista centrada, con anchura máxima cómoda */
+.lectura {
+  display: grid;
+  grid-template-columns: minmax(0, 44rem);
+  justify-content: center;
+  gap: var(--espacio-6);
+  min-inline-size: 0;
+}

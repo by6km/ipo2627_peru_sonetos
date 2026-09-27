@@ -1,0 +1,11 @@
+/* Punto de entrada. El orden de las capas decide la cascada, no la especificidad
+   ni el orden de los ficheros: lo que está más abajo gana. */
+@layer reset, tokens, base, layout, componentes;
+
+@import url("reset.css") layer(reset);
+@import url("tokens.css") layer(tokens);
+@import url("base.css") layer(base);
+@import url("layout.css") layer(layout);
+@import url("indice.css") layer(componentes);
+@import url("soneto.css") layer(componentes);
+@import url("controles.css") layer(componentes);

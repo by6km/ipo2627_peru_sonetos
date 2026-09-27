@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sonetos</title>
+  <meta name="description" content="Lector de sonetos: elige uno del índice y léelo con calma.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Figtree:wght@400;600&display=swap">
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- Los módulos ES se aplazan solos (como "defer") y se ejecutan con el DOM ya construido -->
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <a class="salto" href="#lectura">Ir al soneto</a>
+
+  <div class="app">
+    <header class="cabecera">
+      <h1 class="cabecera__titulo">Sonetos</h1>
+      <p class="cabecera__lema">Elige uno del índice y léelo con calma.</p>
+
+      <nav aria-label="Índice de sonetos">
+        <ul class="indice__lista" id="indice" role="list"></ul>
+      </nav>
+    </header>
+
+    <main class="lectura" id="lectura" tabindex="-1">
+      <div class="lectura__herramientas" role="group" aria-label="Tamaño del texto">
+        <button class="boton" id="reducir" type="button" aria-label="Reducir el tamaño del texto">A−</button>
+        <button class="boton" id="aumentar" type="button" aria-label="Aumentar el tamaño del texto">A+</button>
+      </div>
+
+      <div id="soneto"></div>
+
+      <nav class="pasos" aria-label="Sonetos contiguos">
+        <a class="paso paso--anterior" id="paso-anterior" rel="prev" hidden>
+          <span class="paso__sentido">Anterior</span>
+          <span class="paso__titulo" data-campo="titulo"></span>
+        </a>
+        <a class="paso paso--siguiente" id="paso-siguiente" rel="next" hidden>
+          <span class="paso__sentido">Siguiente</span>
+          <span class="paso__titulo" data-campo="titulo"></span>
+        </a>
+      </nav>
+    </main>
+  </div>
+
+  <!-- Plantillas: la vista las clona y rellena; el HTML de cada pieza vive aquí, no en strings de JS -->
+  <template id="plantilla-indice">
+    <li>
+      <a class="indice__enlace" data-campo="enlace">
+        <span class="indice__titulo" data-campo="titulo"></span>
+        <span class="indice__autor" data-campo="autor"></span>
+      </a>
+    </li>
+  </template>
+
+  <template id="plantilla-soneto">
+    <article class="soneto">
+      <header class="soneto__cabecera">
+        <h2 class="soneto__titulo" data-campo="titulo"></h2>
+        <p class="soneto__autor" data-campo="autor"></p>
+      </header>
+      <div class="soneto__cuerpo" data-campo="cuerpo"></div>
+    </article>
+  </template>
+
+  <template id="plantilla-estrofa">
+    <section class="estrofa" data-campo="estrofa">
+      <h3 class="estrofa__nombre" data-campo="nombre"></h3>
+      <p class="estrofa__versos" data-campo="versos"></p>
+    </section>
+  </template>
+</body>
+</html>

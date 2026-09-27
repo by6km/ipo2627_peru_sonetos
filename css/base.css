@@ -1,0 +1,41 @@
+html {
+  scroll-padding-block-start: var(--espacio-4);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  min-block-size: 100dvh;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: var(--fuente-interfaz);
+  font-size: var(--paso-0);
+  line-height: 1.6;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-acento);
+  outline-offset: 3px;
+}
+
+/* Destino de foco programático (tras elegir un soneto): no necesita anillo */
+:where(main):focus {
+  outline: none;
+}
+
+.salto {
+  position: absolute;
+  inset-block-start: -5rem;
+  inset-inline-start: var(--espacio-3);
+  padding: var(--espacio-2) var(--espacio-4);
+  background: var(--color-superficie);
+  border-radius: var(--radio);
+
+  &:focus {
+    inset-block-start: var(--espacio-3);
+  }
+}

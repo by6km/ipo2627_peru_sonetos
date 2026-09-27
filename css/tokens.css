@@ -1,0 +1,48 @@
+/* Sistema de diseño: aquí viven todas las decisiones; el resto de ficheros solo las consumen. */
+:root {
+  /* Activa los dos temas del navegador; light-dark() elige según prefers-color-scheme */
+  color-scheme: light dark;
+
+  /* ── Color: estrategia COMPLEMENTARIA ───────────────────────────────
+     Azul de tinta (matiz ≈ 225°) frente a oro viejo (≈ 40°).
+     El azul aporta todo el cuerpo (fondos, texto, líneas); el oro se reserva
+     para marcar lo importante: elemento activo, foco y agrupación de estrofas. */
+  --tinta-900: #101733;
+  --tinta-800: #18214a;
+  --tinta-700: #2b3768;
+  --tinta-100: #d5dbea;
+  --tinta-50: #f3f5fa;
+  --oro-700: #86590a;
+  --oro-400: #e0b04a;
+
+  --color-fondo: light-dark(var(--tinta-50), var(--tinta-900));
+  --color-superficie: light-dark(#ffffff, var(--tinta-800));
+  --color-texto: light-dark(#141c3a, #e9ecf5);
+  --color-texto-suave: light-dark(#4a5578, #a9b1cf);
+  --color-linea: light-dark(var(--tinta-100), var(--tinta-700));
+  --color-acento: light-dark(var(--oro-700), var(--oro-400));
+
+  /* ── Tipografía: DOS fuentes contrastadas ───────────────────────────
+     Serifa humanista de alto contraste (Cormorant Garamond) para los versos y títulos:
+     es la voz del poema. Sans geométrica sobria (Figtree) para la interfaz: es la voz de la app. */
+  --fuente-lectura: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --fuente-interfaz: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Escala modular (razón 1,25) */
+  --paso--1: 0.875rem;
+  --paso-0: 1rem;
+  --paso-1: 1.25rem;
+  --paso-2: 1.5625rem;
+  --paso-4: clamp(2.5rem, 1.8rem + 3vw, 3.75rem);
+
+  /* ── Espacio: escala en rem (respeta el tamaño de letra del usuario) ── */
+  --espacio-1: 0.25rem;
+  --espacio-2: 0.5rem;
+  --espacio-3: 0.75rem;
+  --espacio-4: 1rem;
+  --espacio-5: 1.5rem;
+  --espacio-6: 2.5rem;
+  --espacio-7: 4rem;
+
+  --radio: 0.5rem;
+}
