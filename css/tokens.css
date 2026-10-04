@@ -23,10 +23,10 @@
   --color-acento: light-dark(var(--oro-700), var(--oro-400));
 
   /* ── Tipografía: DOS fuentes contrastadas ───────────────────────────
-     Serifa humanista de alto contraste (Cormorant Garamond) para los versos y títulos:
-     es la voz del poema. Sans geométrica sobria (Figtree) para la interfaz: es la voz de la app. */
-  --fuente-lectura: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
-  --fuente-interfaz: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+     Serifa humanista de alto contraste para los versos y títulos:
+     es la voz del poema. Sans geométrica sobria para la interfaz: es la voz de la app. */
+  --fuente-lectura: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --fuente-interfaz: system-ui, -apple-system, "Segoe UI", sans-serif;
 
   /* Escala modular (razón 1,25) */
   --paso--1: 0.875rem;
