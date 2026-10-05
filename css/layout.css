@@ -15,12 +15,14 @@
   }
 }
 
+/*Menú*/
 .cabecera {
   display: grid;
   gap: var(--espacio-4);
   align-content: start;
 
   @media (width >= 56rem) {
+    /*Al bajar la página, el menú también baja*/
     position: sticky;
     inset-block-start: var(--espacio-6);
   }
@@ -38,7 +40,7 @@
   color: var(--color-texto-suave);
 }
 
-/* Columna de lectura: una sola pista centrada, con anchura máxima cómoda */
+/*Sonetos*/
 .lectura {
   display: grid;
   grid-template-columns: minmax(0, 44rem);

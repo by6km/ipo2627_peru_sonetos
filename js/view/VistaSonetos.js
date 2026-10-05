@@ -1,10 +1,5 @@
-/**
- * Vista: es la única parte que toca el DOM y el CSSOM.
- *  - DOM:   clona <template>, rellena textos y sustituye contenido.
- *  - CSSOM: fija custom properties (--tamano-lectura, --orden) y deja que el CSS haga el resto.
- * No conoce el modelo más allá de los datos que recibe, ni decide qué hacer ante un evento.
- */
 export class VistaSonetos {
+  // Elementos del HTML
   #indice = document.getElementById('indice');
   #contenedor = document.getElementById('soneto');
   #lectura = document.getElementById('lectura');
@@ -17,7 +12,7 @@ export class VistaSonetos {
   #plantillaSoneto = document.getElementById('plantilla-soneto');
   #plantillaEstrofa = document.getElementById('plantilla-estrofa');
 
-  // --- Índice -------------------------------------------------------------
+  // Índice 
 
   mostrarIndice(sonetos) {
     const elementos = sonetos.map((soneto) => {
@@ -42,7 +37,7 @@ export class VistaSonetos {
     }
   }
 
-  // --- Soneto -------------------------------------------------------------
+  // Soneto
 
   mostrarSoneto(soneto, { anterior, siguiente }, { enfocar = false } = {}) {
     const nodo = this.#plantillaSoneto.content.cloneNode(true);
@@ -60,7 +55,6 @@ export class VistaSonetos {
     document.title = `${soneto.titulo}, de ${soneto.autor} | Sonetos`;
 
     if (enfocar) {
-      // Lleva la vista y el foco (lectores de pantalla, teclado) al soneto recién elegido.
       this.#lectura.scrollIntoView({ block: 'start' });
       this.#lectura.focus({ preventScroll: true });
     }
@@ -73,7 +67,7 @@ export class VistaSonetos {
     this.#contenedor.replaceChildren(aviso);
   }
 
-  // --- Tamaño del texto (coordinación con el CSSOM) -----------------------
+  // Tamaño del texto
 
   fijarTamano(rem, { puedeReducir, puedeAumentar }) {
     this.#lectura.style.setProperty('--tamano-lectura', `${rem}rem`);
@@ -86,7 +80,7 @@ export class VistaSonetos {
     this.#aumentar.addEventListener('click', aumentar);
   }
 
-  // --- Auxiliares ---------------------------------------------------------
+  // Auxiliares
 
   #crearEstrofa(estrofa, posicion) {
     const nodo = this.#plantillaEstrofa.content.cloneNode(true);

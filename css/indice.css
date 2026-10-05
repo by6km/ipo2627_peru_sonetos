@@ -17,7 +17,7 @@
     background: var(--color-superficie);
   }
 
-  /* El estado lo dice el atributo ARIA: lo que ve el ojo coincide con lo que anuncia el lector de pantalla */
+  /*El poema seleccionado se queda con un fondo fijo*/
   &[aria-current="page"] {
     background: var(--color-superficie);
     border-inline-start-color: var(--color-acento);

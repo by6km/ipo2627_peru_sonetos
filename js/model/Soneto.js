@@ -1,4 +1,4 @@
-/** Estructura fija de un soneto: dos cuartetos seguidos de dos tercetos. */
+/*Estructura fija de un soneto*/
 const ESTROFAS = [
   { nombre: 'Primer cuarteto', versos: 4 },
   { nombre: 'Segundo cuarteto', versos: 4 },
@@ -21,7 +21,7 @@ export class Soneto {
     this.titulo = titulo;
     this.autor = autor;
 
-    // Reparte los 14 versos en las cuatro estrofas: [{ nombre, versos: [...] }, ...]
+    // Reparte los 14 versos en las cuatro estrofas
     let inicio = 0;
     this.estrofas = ESTROFAS.map(({ nombre, versos: cantidad }) => {
       const estrofa = { nombre, versos: versos.slice(inicio, inicio + cantidad) };

@@ -4,18 +4,19 @@ const ESCALA_MAX = 4;
 const BASE_REM = 1.375;
 const PASO_REM = 0.125;
 
-/** Preferencias del lector (de momento, el tamaño del texto). Se recuerdan entre visitas. */
+/*Preferencias del lector (tamaño del texto)*/
 export class PreferenciasLectura {
   #escala = 0;
 
   constructor() {
     try {
+      // Guarda la escala última usada
       const guardada = Number(localStorage.getItem(CLAVE));
       if (Number.isInteger(guardada)) {
         this.#escala = Math.min(ESCALA_MAX, Math.max(ESCALA_MIN, guardada));
       }
     } catch {
-      // Sin acceso a localStorage: se usa el valor por defecto.
+      // Sin acceso a localStorage: se usa el valor por defecto
     }
   }
 
@@ -36,7 +37,7 @@ export class PreferenciasLectura {
     try {
       localStorage.setItem(CLAVE, String(this.#escala));
     } catch {
-      // Se ignora: la preferencia solo dura mientras la página está abierta.
+      
     }
   }
 }

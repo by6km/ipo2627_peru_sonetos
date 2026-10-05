@@ -6,7 +6,7 @@
 
 .boton {
   min-inline-size: 2.75rem;
-  min-block-size: 2.75rem; /* objetivo táctil cómodo */
+  min-block-size: 2.75rem; /*Mínimo para que no cueste darle al botón*/
   padding-inline: var(--espacio-3);
   border: 1px solid var(--color-linea);
   border-radius: var(--radio);
@@ -25,7 +25,7 @@
   }
 }
 
-/* Anterior / siguiente: cada uno queda siempre en su columna aunque el otro no exista */
+/*Anterior / siguiente*/
 .pasos {
   display: grid;
   grid-template-columns: 1fr 1fr;

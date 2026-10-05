@@ -1,10 +1,5 @@
 const URL_DATOS = 'data/sonetos.json';
 
-/**
- * Controlador: escucha lo que hace el usuario, consulta/actualiza el modelo y ordena a la vista qué pintar.
- * La selección de soneto se apoya en el hash de la URL (#a-una-nariz): funciona el botón "Atrás",
- * se puede enlazar un soneto concreto y el índice es un conjunto de enlaces normales.
- */
 export class ControladorSonetos {
   #almacen;
   #preferencias;
@@ -33,6 +28,7 @@ export class ControladorSonetos {
       reducir: () => this.#cambiarTamano(-1),
       aumentar: () => this.#cambiarTamano(1),
     });
+    
     this.#vista.fijarTamano(this.#preferencias.tamanoRem, this.#preferencias);
 
     window.addEventListener('hashchange', () => this.#mostrarSegunHash({ enfocar: true }));

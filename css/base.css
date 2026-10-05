@@ -1,7 +1,9 @@
 html {
+  /*Espacio al bajar a un elemento*/
   scroll-padding-block-start: var(--espacio-4);
 }
 
+/*Deslizamiento suave a quien no tenga activado "Reducir movimiento"*/
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
@@ -17,16 +19,18 @@ body {
   line-height: 1.6;
 }
 
+/*Marco al navegar con tabulador*/
 :focus-visible {
   outline: 3px solid var(--color-acento);
   outline-offset: 3px;
 }
 
-/* Destino de foco programático (tras elegir un soneto): no necesita anillo */
+/*Esconde el foco del poema*/
 :where(main):focus {
   outline: none;
 }
 
+/*Botón de "Ir al soneto"*/
 .salto {
   position: absolute;
   inset-block-start: -5rem;

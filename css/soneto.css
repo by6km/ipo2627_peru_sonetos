@@ -1,10 +1,9 @@
-/* El tamaño lo fija JS mediante --tamano-lectura (ver VistaSonetos.fijarTamano).
-   Todo lo interno al soneto se expresa en em, así se reescala en bloque. */
+/*El tamaño-lectura lo da el JS al pulsar los botones de A+ o A-*/
 .soneto {
   font-family: var(--fuente-lectura);
   font-size: var(--tamano-lectura, 1.375rem);
   font-weight: 500;
-  line-height: 1.55; /* serifa: algo más de interlínea que una sans */
+  line-height: 1.55;
 }
 
 .soneto__cabecera {
@@ -26,8 +25,6 @@
   color: var(--color-texto-suave);
 }
 
-/* Gestalt: PROXIMIDAD. Los versos de una estrofa están pegados (interlínea);
-   las estrofas se separan con un hueco mayor, de modo que el ojo ve 4 + 4 + 3 + 3. */
 .soneto__cuerpo {
   display: grid;
   gap: var(--espacio-6);
@@ -37,12 +34,12 @@
   display: grid;
   gap: var(--espacio-2) var(--espacio-5);
 
-  /* Pantallas anchas: nombre de la estrofa en el margen, versos a su derecha */
+  /*Pantallas anchas: nombre de la estrofa en el margen, versos a su derecha*/
   @media (width >= 40rem) {
     grid-template-columns: 8.5rem minmax(0, 1fr);
   }
 
-  /* Único movimiento de la página: al elegir un soneto, las estrofas aparecen una tras otra */
+  /*Al elegir un soneto, las estrofas aparecen una tras otra*/
   @media (prefers-reduced-motion: no-preference) {
     animation: aparecer 500ms ease-out both;
     animation-delay: calc(var(--orden, 0) * 90ms);
@@ -62,14 +59,12 @@
   }
 }
 
-/* Gestalt: REGIÓN COMÚN / CONTINUIDAD. El filete dorado delimita el alcance de cada estrofa:
-   más largo en los cuartetos, más corto en los tercetos. */
+/*Línea vertical dorada*/
 .estrofa__versos {
   padding-inline-start: var(--espacio-4);
   border-inline-start: 2px solid var(--color-acento);
 }
 
-/* Cada verso es una línea; si no cabe, la continuación queda sangrada (sangría francesa) */
 .verso {
   display: block;
   padding-inline-start: 1.5em;

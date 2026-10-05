@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sonetos</title>
   <meta name="description" content="Lector de sonetos: elige uno del índice y léelo con calma.">
+
   <link rel="stylesheet" href="css/main.css">
-  
-  <!-- Los módulos ES se aplazan solos (como "defer") y se ejecutan con el DOM ya construido -->
   <script type="module" src="js/main.js"></script>
 </head>
 <body>
-  <a class="salto" href="#lectura">Ir al soneto</a>
+  <!--Tabulador-->
+  <a class="salto" href="#lectura">Ir al soneto</a> 
 
   <div class="app">
     <header class="cabecera">
@@ -44,7 +44,7 @@
     </main>
   </div>
 
-  <!-- Plantillas: la vista las clona y rellena; el HTML de cada pieza vive aquí, no en strings de JS -->
+  <!--Plantillas-->
   <template id="plantilla-indice">
     <li>
       <a class="indice__enlace" data-campo="enlace">

@@ -1,6 +1,6 @@
 import { Soneto } from './Soneto.js';
 
-/** Almacén de sonetos: los carga desde un JSON y responde consultas sobre ellos. */
+/*Almacén de sonetos: los carga desde el JSON*/
 export class AlmacenSonetos {
   #sonetos = [];
 
@@ -21,7 +21,7 @@ export class AlmacenSonetos {
     return this.#sonetos.find((soneto) => soneto.id === id) ?? null;
   }
 
-  /** Soneto anterior y siguiente en el índice (null si no existen). */
+  /**Soneto anterior y siguiente (null si no existen)*/
   vecinos(id) {
     const posicion = this.#sonetos.findIndex((soneto) => soneto.id === id);
     return {

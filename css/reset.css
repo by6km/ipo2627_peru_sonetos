@@ -1,6 +1,7 @@
 *,
 *::before,
 *::after {
+  /*Mantiene el tamaño de las cajas*/
   box-sizing: border-box;
 }
 
@@ -9,10 +10,12 @@
 }
 
 html {
+  /*Mantenemos siempre el mismo tamaño de texto (vertical/horizontal)*/
   -webkit-text-size-adjust: 100%;
 }
 
 :where(ul, ol) {
+  /*Quitamos sangría y puntos de las listas*/
   padding: 0;
   list-style: none;
 }

@@ -1,10 +1,9 @@
-/* Sistema de diseño: aquí viven todas las decisiones; el resto de ficheros solo las consumen. */
+/*Disponible para toda la web*/
 :root {
-  /* Activa los dos temas del navegador; light-dark() elige según prefers-color-scheme */
+  /*Activa los dos temas del navegador*/
   color-scheme: light dark;
 
-  /* ── Color: estrategia COMPLEMENTARIA ───────────────────────────────
-     Azul de tinta (matiz ≈ 225°) frente a oro viejo (≈ 40°).
+  /* Color: COMPLEMENTARIO
      El azul aporta todo el cuerpo (fondos, texto, líneas); el oro se reserva
      para marcar lo importante: elemento activo, foco y agrupación de estrofas. */
   --tinta-900: #101733;
@@ -22,20 +21,20 @@
   --color-linea: light-dark(var(--tinta-100), var(--tinta-700));
   --color-acento: light-dark(var(--oro-700), var(--oro-400));
 
-  /* ── Tipografía: DOS fuentes contrastadas ───────────────────────────
+  /* Tipografía:
      Serifa humanista de alto contraste para los versos y títulos:
      es la voz del poema. Sans geométrica sobria para la interfaz: es la voz de la app. */
   --fuente-lectura: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
   --fuente-interfaz: system-ui, -apple-system, "Segoe UI", sans-serif;
 
-  /* Escala modular (razón 1,25) */
+  /*Tamaños de letra (razón 1,25)*/
   --paso--1: 0.875rem;
   --paso-0: 1rem;
   --paso-1: 1.25rem;
   --paso-2: 1.5625rem;
   --paso-4: clamp(2.5rem, 1.8rem + 3vw, 3.75rem);
 
-  /* ── Espacio: escala en rem (respeta el tamaño de letra del usuario) ── */
+  /*Tamaños de márgenes*/
   --espacio-1: 0.25rem;
   --espacio-2: 0.5rem;
   --espacio-3: 0.75rem;
